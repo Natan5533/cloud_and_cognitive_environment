@@ -35,17 +35,38 @@
 
 | Serviço | Modelo (IaaS/PaaS/SaaS/FaaS) | Justificativa |
 |---------|------------------------------|---------------|
-| Gmail | | |
-| Azure Virtual Machines | | |
-| Azure App Service (hospedar uma API) | | |
-| AWS Lambda | | |
-| Azure SQL Database | | |
-| Salesforce CRM | | |
-| Google Kubernetes Engine (GKE) | | |
-| Azure Blob Storage | | |
-| Azure OpenAI Service | | |
+| Gmail | SaaS | Você apenas utiliza o serviço, não ha operação de infra|
+| Azure Virtual Machines | IaaS | Azure prove o hardware e virtualização; Os usuarios cuidam da SO e outros componentes. |
+| Azure App Service (hospedar uma API) | PaaS | o usuario é responsavel pela implementação do codigo com a regra de negocio. |
+| AWS Lambda | FaaS | o usuario implementa uma função serveless. |
+| Azure SQL Database | PaaS | O usuario fica responsavel pela gerencia das tabelas, schemas e indexes; Azure forneçe a instancia do banco |
+| Salesforce CRM | SaaS | Usuario utiliza a ferramenta sem gerenciar a infra e codigo. |
+| Google Kubernetes Engine (GKE) | PaaS/IaaS (híbrido) | Você gerencia os pods; GCP gerencia o plano de controle do K8s |
+| Azure Blob Storage | PaaS | Concorrente direto do S3; O usuario gerencia os dados |
+| Azure OpenAI Service | SaaS |  |
 
 ---
+
+### Exercício 1.2 — Os 6 Rs na prática
+
+**Cenário A:** Empresa de logística tem sistema de rastreamento de frotas em servidor físico próprio. Código de 2008, sem documentação, só uma pessoa sabe mexer. Quer migrar rápido para ganhar elasticidade.
+
+REHOST - Ganho rapido porém sem os beneficios do REFACTOR; extrai pouco valor da cloud.
+
+
+**Cenário B:** Banco regional usa ERP local de RH. Análise mostra: menos de 5 usuários ativos por mês, dados raramente consultados.
+RETIRE - Não há necessidade de manter o sistema com essa quantidade de usuarios
+
+**Cenário C:** Fintech tem API de pagamentos monolítica. Decide aproveitar a migração para refatorar em microserviços com K8s e event-driven.
+
+REFACTOR - ganho elevado ja que o cloud fornece diversas ferramentas PaaS que podem ajudar no refatoramento(e.g SNS/SQS).
+
+**Cenário D:** Varejo usa CRM desenvolvido internamente há 15 anos. SaaS de mercado atenderia 90% das necessidades por menor custo.
+
+REPURCHASE - Sistemas internos tem um alto custo, sem o devida manutenção e investimento se tornam obsoletas, as opções do mercado serão mais completas e baratas no final do dia.
+
+**Cenário E:** Instituição financeira tem mainframe com dados de clientes que precisa ficar on-premise por exigência do Banco Central.
+RETAIN - Não há necessidade e demanda na migração e tambem envolve regras de compliance. 
 
 ## 🟡 Nível 2 — Respostas + Implementação
 
