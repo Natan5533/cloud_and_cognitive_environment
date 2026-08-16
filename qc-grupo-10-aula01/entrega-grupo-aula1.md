@@ -41,9 +41,9 @@
 | AWS Lambda | FaaS | o usuario implementa uma função serveless. |
 | Azure SQL Database | PaaS | O usuario fica responsavel pela gerencia das tabelas, schemas e indexes; Azure forneçe a instancia do banco |
 | Salesforce CRM | SaaS | Usuario utiliza a ferramenta sem gerenciar a infra e codigo. |
-| Google Kubernetes Engine (GKE) | PaaS/IaaS (híbrido) | Você gerencia os pods; GCP gerencia o plano de controle do K8s |
+| Google Kubernetes Engine (GKE) | PaaS/IaaS | Você gerencia as maquinas virtuais; GCP gerencia o plano de controle do Kubernetes |
 | Azure Blob Storage | PaaS | Concorrente direto do S3; O usuario gerencia os dados |
-| Azure OpenAI Service | SaaS |  |
+| Azure OpenAI Service | SaaS | O usuario utiliza modelos de AI utilizando API  |
 
 ---
 
@@ -91,11 +91,11 @@ Você é o responsável de segurança da Quantum Commerce. Para cada perfil abai
 
 | Perfil | Role Azure mais adequada | Justificativa |
 |--------|--------------------------|---------------|
-| Agente de IA que LÊ produtos do Storage para responder ao cliente | READER| |
-| Engenheiro de dados que CARREGA novos catálogos no Blob | Contributor| |
-| Time de FinOps que precisa VER custos sem alterar recursos | Reader | |
-| Auditor externo que precisa LER configurações de toda a assinatura | Reader| |
-| Sistema de CI/CD que provisiona infraestrutura via Terraform | Contributor/Owner | |
+| Agente de IA que LÊ produtos do Storage para responder ao cliente | READER| Esse produto não precisa de permissões de escrita |
+| Engenheiro de dados que CARREGA novos catálogos no Blob | Contributor| Acões de Write/Read são necessarias |
+| Time de FinOps que precisa VER custos sem alterar recursos | Reader | Esses usuarios não precisam de permissão de escrita |
+| Auditor externo que precisa LER configurações de toda a assinatura | Reader| Apenas necessita ler informações |
+| Sistema de CI/CD que provisiona infraestrutura via Terraform | Contributor/Owner | A role de Contributor é a mais usada; Depedendo da execução o role de Owner se faz necessaria para gerenciar/criar  certos usuarios |
 
 
 ---
