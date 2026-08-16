@@ -1,23 +1,15 @@
-# Template obrigatório — `entrega-grupo-aulaXX.md`
 
-Use **exatamente este template** dentro do ZIP de cada entrega (substitua os placeholders entre `<>`).
-
-> Copie o bloco abaixo para um novo arquivo `entrega-grupo-aulaXX.md` no repo privado do seu grupo.
-
----
-
-```markdown
-# Entrega Aula <XX> — Grupo <NN>
+# Entrega Aula 1 — Grupo 10
 
 **Disciplina:** Cloud & Cognitive Environments — FIAP MBA AI Engineering & Multi-Agents
-**Turma:** <código da sua turma>
-**Data de entrega:** <DD/MM/AAAA>
+**Turma:** <código da sua turma> # sla man
+**Data de entrega:** <16/08/2026>
 
 ## Grupo
 
 | # | Nome completo | GitHub | E-mail FIAP |
 |---|---------------|--------|-------------|
-| 1 | | | |
+| 1 | Natanael F. Ramos Filho | https://github.com/Natan5533| rm373022@fiap.com.br|
 | 2 | | | |
 | 3 | | | |
 | 4 | | | |
@@ -39,7 +31,19 @@ Use **exatamente este template** dentro do ZIP de cada entrega (substitua os pla
 
 ## 🟢 Nível 1 — Respostas
 
-(Respostas dos exercícios do N1 aqui)
+### *Exercício 1.1*
+
+| Serviço | Modelo (IaaS/PaaS/SaaS/FaaS) | Justificativa |
+|---------|------------------------------|---------------|
+| Gmail | | |
+| Azure Virtual Machines | | |
+| Azure App Service (hospedar uma API) | | |
+| AWS Lambda | | |
+| Azure SQL Database | | |
+| Salesforce CRM | | |
+| Google Kubernetes Engine (GKE) | | |
+| Azure Blob Storage | | |
+| Azure OpenAI Service | | |
 
 ---
 
