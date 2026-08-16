@@ -68,6 +68,38 @@ REPURCHASE - Sistemas internos tem um alto custo, sem o devida manutenção e in
 **Cenário E:** Instituição financeira tem mainframe com dados de clientes que precisa ficar on-premise por exigência do Banco Central.
 RETAIN - Não há necessidade e demanda na migração e tambem envolve regras de compliance. 
 
+### Exercício 1.3 — Calculando o impacto do SLA
+
+Sistema de e-commerce com SLA de 99,9%.
+
+a) Quantas horas de downtime por ano?
+8 Horas 45 Minutos 36 Segundos
+
+b) Se processa R$ 50.000/hora em vendas, qual o impacto financeiro máximo por ano?
+formula: (50000 * 8) + ((50000/60) * 45) + (((50000/60)/ 60) * 36)
+
+RR R$438.000
+
+
+c) Para reduzir o impacto para menos de R$ 50.000/ano, qual SLA mínimo seria necessário?
+99,99%
+
+
+### Exercício 1.4 — RBAC na prática
+
+Você é o responsável de segurança da Quantum Commerce. Para cada perfil abaixo, escolha a role built-in do Azure mais adequada e justifique:
+
+| Perfil | Role Azure mais adequada | Justificativa |
+|--------|--------------------------|---------------|
+| Agente de IA que LÊ produtos do Storage para responder ao cliente | READER| |
+| Engenheiro de dados que CARREGA novos catálogos no Blob | Contributor| |
+| Time de FinOps que precisa VER custos sem alterar recursos | Reader | |
+| Auditor externo que precisa LER configurações de toda a assinatura | Reader| |
+| Sistema de CI/CD que provisiona infraestrutura via Terraform | Contributor/Owner | |
+
+
+---
+
 ## 🟡 Nível 2 — Respostas + Implementação
 
 (Respostas + diagramas + código quando aplicável)
