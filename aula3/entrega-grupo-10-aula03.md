@@ -1,4 +1,4 @@
-# Entrega Aula <03> — Grupo <10>
+# Entrega Aula 03 — Grupo 10
 
 **Disciplina:** Cloud & Cognitive Environments — FIAP MBA AI Engineering & Multi-Agents
 **Turma:** 1AIE #
