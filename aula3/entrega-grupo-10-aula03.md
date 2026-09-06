@@ -235,17 +235,16 @@ site_config {
 
 Realizar **20 chamadas variadas** à Function e adicionar o print do **Application Insights → Live Metrics**.
 
-**Print:** `PREENCHER`
+![alt text](image-1.png)
 
 #### c) Failures e latência
 
 | Métrica | Resultado |
 |---------|-----------|
-| Taxa de falhas | **PREENCHER** |
-| p95 de latência | **PREENCHER** |
-| Gargalo identificado | **PREENCHER** |
+| Taxa de falhas | 0,0% (0 de 61 requests)|
+| p95 de latência | 	~1,17 s|
+| Gargalo identificado | Não há sinal de CPU ou memória saturadas; o principal indício é instabilidade do worker (Language Worker Process exited), então o gargalo parece estar no runtime/execução da Function, não em compute |
 
-Esses valores devem ser obtidos no Application Insights após a execução das chamadas.
 
 #### d) Observabilidade em sistema multi-agente
 
@@ -288,9 +287,9 @@ Após consultar o Azure Pricing Calculator:
 
 | Configuração | Custo/hora | Custo 24/7 |
 |--------------|------------|------------|
-| ACI 0.5 vCPU / 1 GB | **PREENCHER** | **PREENCHER** |
-| ACI 1 vCPU / 2 GB | **PREENCHER** | **PREENCHER** |
-| Function equivalente | **PREENCHER** | **PREENCHER** |
+| ACI 0.5 vCPU / 1 GB | ~US$ 0,048/h | ~US$ 1,15/dia |
+| ACI 1 vCPU / 2 GB | ~US$ 0,053/h | ~US$ 1,26/dia |
+| Function equivalente | ~US$ 0,029/h | ~US$ 0,69/dia |
 
 O **ACI cobra enquanto o container existir**, enquanto uma Function em modelo de consumo pode escalar a zero e reduzir o custo quando não existem requisições.
 

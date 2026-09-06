@@ -74,6 +74,13 @@ terraform apply -auto-approve
 
 Tempo: ~3-5 min. Isso já cria o Storage do catálogo e sobe o `produtos.csv`. Anote os outputs (`function_app_name`, `acr_login_server`, `catalogo_storage_account_name`).
 
+<!-- aci_fqdn = "ACI ainda não habilitado — após pushar imagem, rode 'terraform apply' com -var aci_enabled=true"
+acr_login_server = "acrqcxdnjo2.azurecr.io"
+acr_name = "acrqcxdnjo2"
+catalogo_storage_account_name = "stcatqcxdnjo2"
+function_app_default_hostname = "https://func-qc-xdnjo2.azurewebsites.net"
+function_app_name = "func-qc-xdnjo2"
+resource_group_name = "rg-qc-aula03-xdnjo2" -->
 ### Passo 2 — Deploy da versão mock (v1)
 
 A pasta [function/v1-mock/](function/v1-mock/) tem código self-contained (5 produtos hardcoded — bom para validar que o pipeline de deploy funciona).
