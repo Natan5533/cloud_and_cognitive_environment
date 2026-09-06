@@ -18,7 +18,10 @@ resource "azurerm_function_app_flex_consumption" "fn" {
   instance_memory_in_mb  = 2048
   maximum_instance_count = 40
 
-  site_config {}
+
+  site_config {
+    application_insights_connection_string = azurerm_application_insights.rg.connection_string
+  }
 
   identity {
     type = "SystemAssigned"
