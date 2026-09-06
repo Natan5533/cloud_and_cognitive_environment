@@ -58,7 +58,7 @@ resource "azurerm_container_group" "aci" {
       protocol = "TCP"
     }
 
-    environment_variables = {
+    secure_environment_variables = {
       STORAGE_ACCOUNT_CATALOGO = azurerm_storage_account.catalogo.name
     }
   }
