@@ -291,39 +291,58 @@ Após consultar o Azure Pricing Calculator:
 | ACI 1 vCPU / 2 GB | ~US$ 0,053/h | ~US$ 1,26/dia |
 | Function equivalente | ~US$ 0,029/h | ~US$ 0,69/dia |
 
-O **ACI cobra enquanto o container existir**, enquanto uma Function em modelo de consumo pode escalar a zero e reduzir o custo quando não existem requisições.
 
 ---
 
 #### c) Segredo via secure env
 
-Mover uma configuração sensível para:
-
 ```hcl
-secure_environment_variables = {
-  API_KEY = "PREENCHER"
-}
+    secure_environment_variables = {
+      STORAGE_ACCOUNT_CATALOGO = azurerm_storage_account.catalogo.name
+    }
 ```
 
-Em vez de:
 
-```hcl
-environment_variables = {
-  API_KEY = "PREENCHER"
-}
-```
-
-Executar:
+Execução:
 
 ```bash
-az container show \
-  --resource-group <RESOURCE_GROUP> \
-  --name <CONTAINER_NAME>
+  az container show \
+  --resource-group "$RG_NAME" \
+  --name "aci-qc-8mkz4y" 
 ```
 
-**Resultado observado:** `PREENCHER`
+**Resultado observado:** 
 
-A diferença esperada é que valores definidos como `secure_environment_variables` não sejam exibidos em texto plano ao inspecionar o container.
+*antes:*
+```
+        {
+          "name": "STORAGE_ACCOUNT_CATALOGO",
+          "secureValue": null,
+          "value": "stcatqc8mkz4y"
+        }
+```
+
+*depois:*
+```
+      "environmentVariables": [
+        {
+          "name": "STORAGE_ACCOUNT_CATALOGO",
+          "secureValue": null,
+          "value": null
+        }
+      ],
+```
+
+*dentro do container:*
+```
+# printenv STORAGE_ACCOUNT_CATALOGO
+stcatqc8mkz4y
+```
+
+
+
+
+
 
 ---
 
